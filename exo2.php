@@ -10,3 +10,49 @@
 </p>
 
 <?php
+
+$capitales = array("France" => "Paris", "Allemange" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
+$capitals = array("" => "");
+$tab = array("Globulle", "Globulex", "Globulax");
+
+
+$capitales = ksort($capitales);
+var_dump($capitals);
+
+
+/*
+echo "<pre>";
+print_r($capitales);
+echo "</pre>";
+/*
+foreach ($capitales as $pays => $capitale) {
+   echo $pays = mb_strtoupper($pays);
+ }
+
+function afficherTableHTML($capitals) {
+    
+ 
+    echo "<pre>";
+    print_r($capitals);
+    echo "</pre>";
+}
+
+afficherTableHTML($capitales);
+
+*/
+
+
+/*
+$capitales = array("France" => "Paris", "Allemange" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
+$capitals = array("" => "");
+function afficherTableHTML($capitals) {
+    $capitals = ksort($capitals);
+    
+
+    echo "<pre>";
+    print_r($capitals);
+    echo "</pre>";
+}
+
+afficherTableHTML($capitales);
+*/
