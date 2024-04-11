@@ -20,9 +20,3 @@ function convertirMajRouge(string $text): string {
 
 echo convertirMajRouge($texte);
 
-/* je ne comprends pas pourquoi ceci ne fonctionne pas :
-
-convertirMajRouge($texte);
-echo $texte;
-
-*/

@@ -20,11 +20,6 @@ $capitales = ksort($capitales);
 var_dump($capitals);
 
 
-/*
-echo "<pre>";
-print_r($capitales);
-echo "</pre>";
-/*
 foreach ($capitales as $pays => $capitale) {
    echo $pays = mb_strtoupper($pays);
  }
@@ -39,7 +34,7 @@ function afficherTableHTML($capitals) {
 
 afficherTableHTML($capitales);
 
-*/
+
 
 
 /*
