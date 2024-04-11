@@ -13,41 +13,15 @@
 
 $capitales = array("France" => "Paris", "Allemange" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
 $capitals = array("" => "");
-$tab = array("Globulle", "Globulex", "Globulax");
 
-
-$capitales = ksort($capitales);
-var_dump($capitals);
-
-
-foreach ($capitales as $pays => $capitale) {
-   echo $pays = mb_strtoupper($pays);
- }
 
 function afficherTableHTML($capitals) {
-    
- 
+   
+    ksort($capitals);
     echo "<pre>";
-    print_r($capitals);
+    print_r(array_change_key_case($capitals, CASE_UPPER));
     echo "</pre>";
 }
 
 afficherTableHTML($capitales);
 
-
-
-
-/*
-$capitales = array("France" => "Paris", "Allemange" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
-$capitals = array("" => "");
-function afficherTableHTML($capitals) {
-    $capitals = ksort($capitals);
-    
-
-    echo "<pre>";
-    print_r($capitals);
-    echo "</pre>";
-}
-
-afficherTableHTML($capitales);
-*/
