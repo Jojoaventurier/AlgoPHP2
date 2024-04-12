@@ -8,18 +8,6 @@
     afficherInput($nomsInput);
 </p>
 
-
-<html>
-<body>
-
-<form method="POST">
-    
-</form>
-
-</body>
-</html>
-
-
 <?php
 
 $tabForm = array("Nom", "Prénom", "Ville");

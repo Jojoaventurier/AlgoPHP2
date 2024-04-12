@@ -4,7 +4,7 @@
     Créet une fonction personnalisée permettant de remplir une liste déroulante à partir d'un
     tableau de valeurs.<br>
     Exemple :<br>
-    $elmeents = array("Monsieur","Madame","Mademoiselle");
+    $elements = array("Monsieur","Madame","Mademoiselle");
     alimenterListeDeroulante($elements);
 </p>
 
