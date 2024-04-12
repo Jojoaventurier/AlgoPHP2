@@ -11,10 +11,22 @@
 
 <?php
 
-$capitales = array("France" => "Paris", "Allemange" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
-$capitals = array("" => "");
+$capitales = array("France" => "Paris", "Allemagne" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
+
+ksort($capitales);
+afficherTableHTML($capitales);
+
+function afficherTableHTML($array) {
+    echo "<table border=1><th>Pays </th><th>Capitale </th>";
+    foreach ($array as $key => $value) {
+        echo "<tr><td>". strtoupper($key) ."</td><td>". $value."</td></tr>";
+    }
+    echo "</table>";
+}
 
 
+/*
+$capitals = array("" => "", "" => "");
 function afficherTableHTML($capitals) {
    
     ksort($capitals);
@@ -24,4 +36,4 @@ function afficherTableHTML($capitals) {
 }
 
 afficherTableHTML($capitales);
-
+*/
