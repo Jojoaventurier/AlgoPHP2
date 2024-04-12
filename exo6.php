@@ -12,9 +12,9 @@
     <select>
         <label >Civilité</label>
             <?php
-                $elements = array("Mademoiselle", "Madame", "Monsieur", "   ");
+                $el = array("Mademoiselle", "Madame", "Monsieur", "   ");
 
-                alimenterListeDeroulante($elements);
+                alimenterListeDeroulante($el);
 
                 function alimenterListeDeroulante($array) {
                     foreach($array as $value) {

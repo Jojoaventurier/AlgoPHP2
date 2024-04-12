@@ -8,15 +8,15 @@
 
 <?php
 
-echo $texte = "Mon texte en paramètre<br>";
+$texte = "Mon texte en paramètre<br>";
 
 $text = "";
 
-function convertirMajRouge(string $text): string {
+function convertirMajRouge(string $text) {
      $text = mb_strtoupper($text);
      $text = str_ireplace($text , '<font color="red">'.$text.'</font>', $text);
-     return $text;
+    echo $text;
 }
 
-echo convertirMajRouge($texte);
+convertirMajRouge($texte);
 

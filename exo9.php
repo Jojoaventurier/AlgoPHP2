@@ -8,3 +8,13 @@
 </p>
 
 <?php
+
+$items = ["Mademoiselle", "Madame", "Monsieur"];
+afficherRadio($items);
+
+function afficherRadio($array) {
+    
+    foreach($array as $key) {
+            echo '<input name = "name" type = "radio" value ="'.strtolower($key).'">' .$key. '</input><br>';
+        }  
+    }

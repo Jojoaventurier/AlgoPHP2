@@ -9,8 +9,23 @@
 </p>
 
 
+
 <?php
 
+
+$elements = ["Mademoiselle" => "" , "Madame" => "checked" , "Monsieur" => "" ];
+genererCheckbox($elements);
+
+function genererCheckbox($array) {
+
+    foreach($array as $key => $value) {
+            echo '<input '.$value.' type = "checkbox" value ="'.strtolower($key).'">' .$key. '</input><br>';
+        }  
+    }
+
+
+// MA REPONSE INITIALE
+/*
 $elements = ["Mademoiselle" => false , "Madame" => true , "Monsieur" => false ];
 
 alimenterListeDeroulante($elements);
@@ -29,3 +44,4 @@ function alimenterListeDeroulante($array) {
         }
     }
 }
+*/
