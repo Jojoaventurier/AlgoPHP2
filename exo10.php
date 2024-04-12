@@ -21,18 +21,21 @@ $champsDeTextes = ["Nom", "Prénom", "adresse-email", "ville"];
 $sexes = ["Mademoiselle", "Madame", "Monsieur"];
 $formations = ["Développeur Logiciel", "Designer Web", "Intégrateur", "Chef de Projet"];
 
-
-
 afficherRadio($sexes);
-echo "<br>";
-makeTextInputField($champsDeTextes); 
-alimenterListeDeroulante($formations);
-?>
 
+echo "<br>";
+
+makeTextInputField($champsDeTextes); 
+
+echo "<br>";
+
+?>
 <select>
    <?php
          alimenterListeDeroulante($formations);
    ?>
 </select>
+
+<input type="submit">
 
 
