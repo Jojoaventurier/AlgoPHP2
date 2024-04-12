@@ -8,4 +8,32 @@
     afficherInput($nomsInput);
 </p>
 
+
+<html>
+<body>
+
+<form method="POST">
+    
+</form>
+
+</body>
+</html>
+
+
 <?php
+
+$tabForm = array("Nom", "Prénom", "Ville");
+
+function makeTextInputField($array) {
+
+ foreach ($array as $key) {
+    $text = ucfirst($key);
+        echo"
+        <label for='{$key}'>{$text}<br></label>
+        <input type='text' name='{$key}' />
+        <br>";  
+    }
+}
+
+makeTextInputField($tabForm);
+

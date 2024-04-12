@@ -7,5 +7,11 @@
 
 <?php
 
+$link = "https://elan-formation.fr/accueil";
+?>
 
-echo '<a href="https://elan-formation.fr/accueil" target="_blank">Elan Formation</a>';
+
+<a href="<?php $link?>" target="_blank">Elan Formation</a>
+
+
+
