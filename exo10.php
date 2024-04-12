@@ -1,6 +1,6 @@
 <?php 
 
-require 'fonctionsexos.php';
+require 'listefonctions.php';
 
 ?>
 
