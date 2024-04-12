@@ -11,3 +11,16 @@
     "Italie"=>"Rome","Espagne"=>"Madrid");</p>
 
 <?php
+
+$capitales = array("France" => "Paris", "Allemagne" => "Berlin", "USA" => "Washington", "Italie" => "Rome");
+
+ksort($capitales);
+afficherTableHTML($capitales);
+
+function afficherTableHTML($array) {
+    echo "<table border=1><th>Capitale </th><th>Pays </th><th>Wiki </th>";
+    foreach ($array as $key => $value) {
+        echo "<tr><td>". $value ."</td><td>". mb_strtoupper($key)."</td><td>". '<a href="https://fr.wikipedia.org/wiki/" target="_blank">Lien</a>'."</td></tr>";
+    }
+    echo "</table>";
+}
