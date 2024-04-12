@@ -1,11 +1,27 @@
 <h2>Exercice 6</h2>
 
-<p>
-    Créet une fonction personnalisée permettant de remplir une liste déroulante à partir d'un
-    tableau de valeurs.<br>
-    Exemple :<br>
-    $elements = array("Monsieur","Madame","Mademoiselle");
-    alimenterListeDeroulante($elements);
-</p>
 
-<?php
+    <p>
+        Créer une fonction personnalisée permettant de remplir une liste déroulante à partir d'un
+        tableau de valeurs.<br>
+        Exemple :<br>
+        $elements = array("Monsieur","Madame","Mademoiselle");
+        alimenterListeDeroulante($elements);
+    </p>
+
+    <select>
+        <label >Civilité</label>
+            <?php
+                $elements = array("Mademoiselle", "Madame", "Monsieur", "   ");
+
+                alimenterListeDeroulante($elements);
+
+                function alimenterListeDeroulante($array) {
+                    foreach($array as $value) {
+                    echo '<option value="'.strtolower($value).'">' .$value.'</option>';
+                    }
+                }
+            ?>
+     </select>
+ 
+
