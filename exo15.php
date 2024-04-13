@@ -11,11 +11,17 @@
 
 <?php
 
-$email1 = "john.doe@example.com";
+$email1 = "elan@elan-formation.fr";
+$email2 = "contact@elan";
 
+function validateEmail($email) {
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  echo("$email is a valid email address");
-} else {
-  echo("$email is not a valid email address");
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo("$email is a valid email address<br>");
+      } else {
+        echo("$email is not a valid email address<br>");
+      }
 }
+
+validateEmail($email1);
+validateEmail($email2);
