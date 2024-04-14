@@ -21,3 +21,12 @@ echo "<br>";
 echo date('l jS \of F Y', $date);
 echo "<br>";
 
+$fmt = datefmt_create( "fr-FR",
+   IntlDateFormatter::FULL, 
+   IntlDateFormatter::FULL,
+   'Europe/Paris',
+   IntlDateFormatter::GREGORIAN,
+   "EEEE, 'le' d LLLL Y");
+
+ echo "Aujourd'hui, nous sommes " . datefmt_format( $fmt ,time());
+
