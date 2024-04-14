@@ -28,5 +28,7 @@ $fmt = datefmt_create( "fr-FR",
    IntlDateFormatter::GREGORIAN,
    "EEEE, 'le' d LLLL Y");
 
+ echo "Ce jour-là, nous étions " . datefmt_format( $fmt ,$date);
+ echo "<br>";
  echo "Aujourd'hui, nous sommes " . datefmt_format( $fmt ,time());
 
