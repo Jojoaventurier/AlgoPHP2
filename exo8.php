@@ -12,9 +12,24 @@
 
 $urlImage = 'http://my.mobirise.com/data/userpic/764.jpg';
 
-// FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -
 
-function repeterImage(string $url,int $nbRepet) {
+
+repeterImage1($urlImage, 2);
+
+function repeterImage1(string $url,int $nbRepet) {
+    $i = 0;
+    $imageData = base64_encode(file_get_contents($url));
+
+    for ($i = 0;  $i < $nbRepet; $i++) {
+        echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
+    }
+}
+// La sémantique plus juste avec for que while.
+
+/*
+repeterImage2($urlImage, 2);
+
+function repeterImage2(string $url,int $nbRepet) {
     $i = 0;
     $imageData = base64_encode(file_get_contents($url));
     while ($i < $nbRepet) {
@@ -22,7 +37,4 @@ function repeterImage(string $url,int $nbRepet) {
         $i++;
     }
 }
-
-repeterImage($urlImage, 2);
-
-// FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -FAIRE AVEC FOR -
+*/
