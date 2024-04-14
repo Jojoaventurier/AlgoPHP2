@@ -11,3 +11,13 @@
 
 <?php
 
+echo date("d-m-Y");
+echo "<br>";
+
+$dateString = "2018-02-23";
+$date = strtotime($dateString);
+echo date("d-m-Y", $date);
+echo "<br>";
+echo date('l jS \of F Y', $date);
+echo "<br>";
+
