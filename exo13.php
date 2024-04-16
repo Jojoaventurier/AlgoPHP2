@@ -15,3 +15,83 @@
 </p>
 
 <?php
+
+class Voiture {
+
+    public string $marque;
+    public string $modele;
+    public int $nbPortes;
+    public float $vitesseActuelle;
+
+    public function __construct(string $marque, string $modele, string $nbPortes) {
+        $this->marque = $marque;
+        $this->modele = $modele;
+        $this->nbPortes = $nbPortes;
+
+    }
+
+    public function getMarque()
+    {
+        return $this->marque;
+    }
+
+    public function setMarque($marque)
+    {
+        $this->marque = $marque;
+
+        return $this;
+    }
+
+    public function getModele()
+    {
+        return $this->modele;
+    }
+
+    public function setModele($modele)
+    {
+        $this->modele = $modele;
+
+        return $this;
+    }
+
+    public function getNbPortes()
+    {
+        return $this->nbPortes;
+    }
+
+    public function setNbPortes($nbPortes)
+    {
+        $this->nbPortes = $nbPortes;
+
+        return $this;
+    }
+
+
+    public function getVitesseActuelle()
+    {
+        return $this->vitesseActuelle;
+    }
+
+    public function setVitesseActuelle($vitesseActuelle)
+    {
+        $this->vitesseActuelle = $vitesseActuelle;
+
+        return $this;
+    }
+
+    public function demarrer() {
+
+    }
+
+    public function accelerer() {
+
+    }
+
+    public function stopper() {
+
+    }
+
+    public function ralentir(vitesse) {
+
+    }
+}

@@ -32,4 +32,4 @@ $fmt = datefmt_create( "fr-FR",
  echo "<br>";
  echo "Aujourd'hui, nous sommes " . datefmt_format( $fmt ,time());
 
-//version plus simple avec format(d-m-Y);
+//version plus simple avec format(d-m-Y) ???;
