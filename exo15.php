@@ -25,3 +25,6 @@ function validateEmail($email) {
 
 validateEmail($email1);
 validateEmail($email2);
+
+
+// définir faille XSS, les dangers et comment s'en protéger
