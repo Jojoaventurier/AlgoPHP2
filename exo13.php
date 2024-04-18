@@ -107,12 +107,15 @@ class Voiture {
 ///////////////////////////////////////////////////////////////////
 
     public function demarrer() {
-// if -> voiture est déjà démarrée
+        if ($this->isOn == true) {
         $this->setIsOn(true);
         $this->setVitesseActuelle(0);
 
         return "Le véhicule ". $this. " démarre<br>";
+    }   else if ($this->isOn == false) {
+        return "Le véhicule ". $this. " doit être démarré !<br>";
     }
+}
 
     public function accelerer(float $augVit) {
 
@@ -128,12 +131,14 @@ class Voiture {
 
 
     public function stopper() {
-        //vérifier que la voiture n'est pas déjà stoppée
+        if ($this->isOn == true) {
         $this->setIsOn(false);
         $this->setVitesseActuelle(0);
         return "Le véhicule  ". $this. " est stoppé<br>";
+    } else if ($this->isOn == false) {
+        return "le véhicule ". $this. " est déjà stoppé<br>";
     }
-
+}
 
     public function ralentir($vitesse) {
 
