@@ -107,13 +107,13 @@ class Voiture {
 ///////////////////////////////////////////////////////////////////
 
     public function demarrer() {
-        if ($this->isOn == true) {
+        if ($this->isOn == false) {
         $this->setIsOn(true);
         $this->setVitesseActuelle(0);
 
         return "Le véhicule ". $this. " démarre<br>";
-    }   else if ($this->isOn == false) {
-        return "Le véhicule ". $this. " doit être démarré !<br>";
+    }   else if ($this->isOn == true) {
+        return "Le véhicule ". $this. " est déjà démarré !<br>";
     }
 }
 
@@ -161,7 +161,7 @@ class Voiture {
 
     public function getInfos() {
 
-       return "<h2>Infos véhicule __</h2>
+       return "<h2>Infos véhicule</h2>
                 **********************************<br>
                 <p>Nom et modèle du véhicule : ". $this ."<br>
                 Nombre de portes : ". $this->nbPortes. "<br>"
@@ -191,6 +191,8 @@ echo $v2->getVitesseActuelle();
 echo $v1->ralentir(20);
 echo $v1->getVitesseActuelle();
 echo $v1->ralentir(100);
+echo $v1->getVitesseActuelle();
+echo $v1->accelerer(50);
 echo $v1->getVitesseActuelle();
 echo $v2->ralentir(10);
 
