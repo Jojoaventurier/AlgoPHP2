@@ -12,3 +12,50 @@
 </p>
 
 <?php
+
+class Voiture {
+
+    private string $marque;
+    private string $modele;
+
+    public function __construct(string $marque, string $modele) {
+        $this->marque = $marque;
+        $this->modele = $modele;
+    }
+
+    public function getMarque()
+    {
+        return $this->marque;
+    }
+
+    public function setMarque($marque)
+    {
+        $this->marque = $marque;
+
+        return $this;
+    }
+
+    public function getModele()
+    {
+        return $this->modele;
+    }
+
+    public function setModele($modele)
+    {
+        $this->modele = $modele;
+
+        return $this;
+    }
+}
+
+class VoitureElec extends Voiture {
+
+    private int $autonomie;
+
+    public function __construct($data, int $autonomie) {
+
+        parent::__construct($data);
+        $this->autonomie = $autonomie;
+
+    }
+}
