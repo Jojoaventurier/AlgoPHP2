@@ -20,3 +20,4 @@ function convertirMajRouge(string $text) {
 
 convertirMajRouge($texte);
 
+phpinfo();
