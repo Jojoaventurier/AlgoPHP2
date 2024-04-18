@@ -16,6 +16,7 @@
 
 <?php
 
+
 class Voiture {
 
     private string $marque;
@@ -23,16 +24,13 @@ class Voiture {
     private int $nbPortes;
     private float $vitesseActuelle;
     private bool $isOn;
-    private int $idVoiture;
 
-
-    public function __construct(string $marque, string $modele, string $nbPortes) {
+    public function __construct(string $marque, string $modele, string $nbPortes, $vitesseActuelle = 0, $isOn = false) {
         $this->marque = $marque;
         $this->modele = $modele;
         $this->nbPortes = $nbPortes;
-        $this->isOn = $isOn = false;
-        $this->idVoiture = $idVoiture;
-
+        $this->vitesseActuelle = $vitesseActuelle;
+        $this->isOn = $isOn;
     }
 
     public function getMarque()
@@ -72,9 +70,17 @@ class Voiture {
     }
 
     public function getVitesseActuelle()
-    {
+    {   if ($this->vitesseActuelle <= 0) {
+
+        return "La vitesse du véhicule ". $this. " est de ". $this->vitesseActuelle." km/h<br>";
+
+    } else if ($this->vitesseActuelle < 0) {
+
+        $this->setVitesseActuelle(0);
+
         return "La vitesse du véhicule ". $this. " est de ". $this->vitesseActuelle." km/h<br>";
     }
+}
 
     public function setVitesseActuelle($vitesseActuelle)
     {
@@ -98,45 +104,70 @@ class Voiture {
         return $this;
     }
 
+///////////////////////////////////////////////////////////////////
+
     public function demarrer() {
+// if -> voiture est déjà démarrée
         $this->setIsOn(true);
         $this->setVitesseActuelle(0);
+
         return "Le véhicule ". $this. " démarre<br>";
     }
 
     public function accelerer(float $augVit) {
+
         if ($this->isOn == true) {
             $this->vitesseActuelle .= $augVit;
             return "Le véhicule ". $this. " accélère de " .$augVit. "km/h <br>";
+
         } else if ($this->isOn == false) {
+
             return "Le véhicule ". $this. " veut accélérer de " .$augVit." km/h<br>Le véhicule ".$this." doit être démarré !<br>";
         }
     }
 
+
     public function stopper() {
+        //vérifier que la voiture n'est pas déjà stoppée
         $this->setIsOn(false);
         $this->setVitesseActuelle(0);
         return "Le véhicule  ". $this. " est stoppé<br>";
     }
 
+
     public function ralentir($vitesse) {
 
+        if ($this->isOn == true && $this->vitesseActuelle  > 0 && $this->vitesseActuelle - $vitesse >= 0) {
+            $this->vitesseActuelle -= $vitesse;
+            return "Le véhicule ". $this. " décélère de " .$vitesse. " km/h<br>";
+
+        } else if ($this->isOn == true && $this->vitesseActuelle  > 0 && $this->vitesseActuelle - $vitesse < 0) {
+
+            $vit = $this->vitesseActuelle;
+            $this->vitesseActuelle -= $this->vitesseActuelle;
+            return "Le véhicule ". $this. " veut décélérer de " .$vitesse." km/h, il ne peut décélérer que de " .$vit. " km/h<br>";
+
+        } else if ($this->isOn == false) {
+
+            return "Le véhicule ". $this. " veut décélérer de " .$vitesse." km/h<br>Le véhicule ".$this." doit être démarré !<br>";
+        }
     }
 
+
     public function getInfos() {
+
        return "<h2>Infos véhicule __</h2>
                 **********************************<br>
                 <p>Nom et modèle du véhicule : ". $this ."<br>
                 Nombre de portes : ". $this->nbPortes. "<br>"
                 . $this->getIsOn() . 
-                "Sa vitesse actuelle est de : ".$this->vitesseActuelle." km/h<br>";
-                
+                "Sa vitesse actuelle est de : ".$this->vitesseActuelle." km/h<br>";             
     }
+
 
     public function __toString() {
         return $this->marque." ". $this->modele;
     }
-
 }
 
 $v1 = new Voiture ("Peugeot", "408", 5);
@@ -150,7 +181,18 @@ echo $v2->accelerer(20);
 echo $v1->getVitesseActuelle();
 echo $v2->getVitesseActuelle();
 
+
+
+echo $v1->ralentir(20);
+echo $v1->getVitesseActuelle();
+echo $v1->ralentir(100);
+echo $v1->getVitesseActuelle();
+echo $v2->ralentir(10);
+
+
 echo $v1->getInfos();
 echo $v2->getInfos();
+
+
 
 
