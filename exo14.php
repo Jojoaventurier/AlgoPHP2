@@ -63,18 +63,13 @@ class VoitureElec extends Voiture {
 
     private int $autonomie;
 
-//  public function __construct($data, int $autonomie) {
-//
-//        parent::__construct($data);
-//        $this->autonomie = $autonomie;
-//    }
- 
-    public function __construct(string $marque, string $modele, int $autonomie) {
-        $this->marque = $marque;
-        $this->modele = $modele;
+
+  public function __construct(string $marque, string $modele, int $autonomie) {
+
+        parent::__construct($marque, $modele);
         $this->autonomie = $autonomie;
     }
-
+ 
     public function getAutonomie()
     {
         return $this->autonomie;
