@@ -46,16 +46,94 @@ class Voiture {
 
         return $this;
     }
+
+    public function getInfos() {
+        return "<h2>Infos véhicule</h2>
+        *********************************<br>
+        <p>Marque : ". $this->marque."<br>
+        Modèle : ". $this->modele."<br>";
+    }
+
+    public function __toString() {
+        return $this->marque." ".$this->modele;
+    }
 }
 
 class VoitureElec extends Voiture {
 
     private int $autonomie;
 
-    public function __construct($data, int $autonomie) {
+//  public function __construct($data, int $autonomie) {
+//
+//        parent::__construct($data);
+//        $this->autonomie = $autonomie;
+//    }
+ 
+    public function __construct(string $marque, string $modele, int $autonomie) {
+        $this->marque = $marque;
+        $this->modele = $modele;
+        $this->autonomie = $autonomie;
+    }
 
-        parent::__construct($data);
+    public function getAutonomie()
+    {
+        return $this->autonomie;
+    }
+
+    public function setAutonomie($autonomie)
+    {
         $this->autonomie = $autonomie;
 
+        return $this;
     }
+
+    public function getInfos() {
+        return "<h2>Infos véhicule</h2>
+        *********************************<br>
+        <p>Marque : ". $this->marque."<br>
+        Modèle : ". $this->modele."<br>
+        Autonomie : ".$this->autonomie."<br></p>";
+    }
+
+    public function __toString() {
+        return $this->marque." ".$this->modele;
+    }
+
 }
+
+$v1 = new Voiture("Peugeot", "408");
+$ve1 = new VoitureElec("BMW", "I3", 100);
+
+echo $v1->getInfos(). "<br/>";
+echo $ve1->getInfos(). "<br/>";
+
+/* FROM https://www.w3schools.com/PHP/php_oop_inheritance.asp
+
+class Fruit {
+    public $name;
+    public $color;
+    public function __construct($name, $color) {
+      $this->name = $name;
+      $this->color = $color;
+    }
+    public function intro() {
+      echo "The fruit is {$this->name} and the color is {$this->color}.";
+    }
+  }
+  
+  class Strawberry extends Fruit {
+    public $weight;
+    public function __construct($name, $color, $weight) {
+      $this->name = $name;
+      $this->color = $color;
+      $this->weight = $weight;
+    }
+    public function intro() {
+      echo "The fruit is {$this->name}, the color is {$this->color}, and the weight is {$this->weight} gram.";
+    }
+  }
+  
+  $strawberry = new Strawberry("Strawberry", "red", 50);
+  $strawberry->intro();
+
+  */

@@ -166,7 +166,7 @@ class Voiture {
                 <p>Nom et modèle du véhicule : ". $this ."<br>
                 Nombre de portes : ". $this->nbPortes. "<br>"
                 . $this->getIsOn() . 
-                "Sa vitesse actuelle est de : ".$this->vitesseActuelle." km/h<br>";             
+                "Sa vitesse actuelle est de : ".$this->vitesseActuelle." km/h<br></p>";             
     }
 
 
