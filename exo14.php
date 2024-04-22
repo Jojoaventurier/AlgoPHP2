@@ -15,8 +15,8 @@
 
 class Voiture {
 
-    private string $marque;
-    private string $modele;
+    protected string $marque;
+    protected string $modele;
 
     public function __construct(string $marque, string $modele) {
         $this->marque = $marque;
@@ -83,15 +83,12 @@ class VoitureElec extends Voiture {
     }
 
     public function getInfos() {
-        return "<h2>Infos véhicule</h2>
-        *********************************<br>
-        <p>Marque : ". $this->marque."<br>
-        Modèle : ". $this->modele."<br>
+        return parent::getInfos()."
         Autonomie : ".$this->autonomie."<br></p>";
     }
 
     public function __toString() {
-        return $this->marque." ".$this->modele;
+        parent::__toString();
     }
 
 }
