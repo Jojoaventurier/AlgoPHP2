@@ -49,7 +49,7 @@ class Voiture {
 
     public function getInfos() {
         return "<h2>Infos véhicule</h2>
-        *********************************<br>
+        *********************<br>
         <p>Marque : ". $this->marque."<br>
         Modèle : ". $this->modele."<br>";
     }
@@ -98,6 +98,7 @@ $ve1 = new VoitureElec("BMW", "I3", 100);
 
 echo $v1->getInfos(). "<br>";
 echo $ve1->getInfos(). "<br>";
+
 
 /* FROM https://www.w3schools.com/PHP/php_oop_inheritance.asp
 
