@@ -36,4 +36,9 @@ function afficherTableHTML($capitals) {
 }
 
 afficherTableHTML($capitales);
+
+foreach ($this->chambres as $chambre) {
+        $result .= "Chambre ". $chambre->getnumChambre(). "
+         ". $chambre->getPrixNuit(). "€ ". $chambre->getWifi(). " ".$chambre->getDisponible() ."<br>";
+    } return $result;
 */
